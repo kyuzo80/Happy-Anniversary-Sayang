@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Happy Anniversary ❤️</title>
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="styles.css">
+  
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Poppins', sans-serif;
+    }
+
+    body{
+      background: linear-gradient(to bottom, #ffdde1, #ee9ca7);
+      min-height:100dvh;
+      overflow-x:hidden;
+      color:white;
+      text-align:center;
+      position:relative;
+    }
+
+    .hidden{
+      display:none;
+    }
+
+    /* Opening Screen */
+    #opening-screen{
+      min-height:100dvh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      padding:20px;
+    }
+
+    .open-box{
+      background:white;
+      color:#ff4d6d;
+      padding:40px;
+      border-radius:20px;
+      cursor:pointer;
+      box-shadow:0 10px 30px rgba(0,0,0,0.2);
+      transition:0.3s ease;
+      width:300px;
+    }
+
+    .open-box:hover{
+      transform:scale(1.05);
+    }
+
+    .open-box h1{
+      margin-bottom:10px;
+      font-size:2rem;
+    }
+
+    /* Main Content */
+    #main-content{
+      padding:30px 20px 60px;
+      animation:fadeIn 1s ease;
+      position:relative;
+      z-index:2;
+    }
+
+    .title{
+      font-size:2.7rem;
+      margin-bottom:25px;
+    }
+
+    .countdown-box,
+    .letter-box,
+    .photo-section{
+      background:rgba(255,255,255,0.15);
+      backdrop-filter:blur(10px);
+      -webkit-backdrop-filter:blur(10px);
+      padding:25px;
+      border-radius:20px;
+      margin:20px auto;
+      max-width:700px;
+      box-shadow:0 8px 20px rgba(0,0,0,0.15);
+    }
+
+    .countdown-box h2,
+    .letter-box h2,
+    .photo-section h2{
+      margin-bottom:15px;
+    }
+
+    .countdown-box p{
+      font-size:1.2rem;
+      font-weight:600;
+    }
+
+    .letter-box p{
+      line-height:1.9;
+      font-size:1rem;
+    }
+
+    /* Photos */
+    .photos{
+      display:flex;
+      justify-content:center;
+      gap:20px;
+      flex-wrap:wrap;
+      margin-top:20px;
+    }
+
+    .photos img{
+      width:280px;
+      height:350px;
+      object-fit:cover;
+      border-radius:20px;
+      border:4px solid white;
+      box-shadow:0 10px 20px rgba(0,0,0,0.2);
+      transition:0.3s ease;
+      background:white;
+    }
+
+    .photos img:hover{
+      transform:scale(1.05);
+    }
+
+    /* Music */
+    audio{
+      margin-top:30px;
+      width:min(300px, 90%);
+    }
+
+    /* Floating Hearts */
+.hearts{
+  position:fixed;
+  inset:0;
+  overflow:hidden;
+  pointer-events:none;
+  z-index:1;
+}
+
+/* Individual Heart */
+.heart{
+  position:absolute;
+  top:-10vh;
+
+  animation-name:fall;
+  animation-timing-function:linear;
+  animation-fill-mode:forwards;
+
+  user-select:none;
+  will-change:transform;
+}
+
+@keyframes fall{
+
+  from{
+    transform:
+      translateY(-10vh)
+      rotate(0deg);
+  }
+
+  to{
+    transform:
+      translateY(120vh)
+      rotate(360deg);
+  }
+}
+
+    @media(max-width:768px){
+
+      .title{
+        font-size:2rem;
+      }
+
+      .open-box{
+        width:100%;
+        max-width:320px;
+      }
+
+      .photos img{
+        width:90%;
+        height:auto;
+      }
+
+      .letter-box p{
+        font-size:0.95rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="hearts"></div>
+
+  <!-- Opening Screen -->
+  <div id="opening-screen">
+    <div class="open-box" onclick="openLetter()">
+      <h1>Tap to Open ❤️</h1>
+      <p>I made something for you...</p>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <div id="main-content" class="hidden">
+
+    <h1 class="title">Happy Anniversary Sayang ❤️</h1>
+
+    <!-- Countdown -->
+    <div class="countdown-box">
+      <h2>Our Special Day 💖</h2>
+      <p id="countdown"></p>
+    </div>
+
+    <!-- Letter -->
+    <div class="letter-box">
+      <h2>For You ❤️</h2>
+
+      <p>
+        hi sayang, happy anniversary ❤️
+        <br><br>
+
+        i know it’s already late and maybe this letter isn’t perfect,
+        but i just wanted to take a moment to tell you how much you genuinely mean to me.
+
+        <br><br>
+
+        honestly, i still can’t believe we’ve made it this far together.
+        through the good days, bad days, misunderstandings,
+        stupid arguments, late night calls, random laughs,
+        and everything in between somehow, it has always been you.
+
+        <br><br>
+
+        i know im not perfect.
+        i know there are times where i mess up,
+        disappoint you, or make things harder than they should be.
+        and for all of that, im really sorry.
+
+        <br><br>
+
+        but one thing i hope you never question
+        is how much i truly love and care for you.
+
+        <br><br>
+
+        thank you for staying.
+        thank you for loving me even when im difficult,
+        for being patient with me,
+        and for still choosing me every day.
+
+        <br><br>
+
+        you genuinely mean so much to me.
+        i hope this is only one of many anniversaries together.
+        more memories, more laughs, more love, and more us.
+
+        <br><br>
+
+        i love you, always ❤️
+        <br><br>
+
+        happy anniversary, sayang ❤️
+      </p>
+    </div>
+
+    <!-- Photos -->
+    <div class="photo-section">
+      <h2>Us ❤️</h2>
+
+      <div class="photos">
+
+        <!-- GOOGLE DRIVE PHOTO -->
+        <img
+          src="./Image 2.jpeg"
+          alt="Us">
+
+        <!-- LOCAL PHOTO -->
+        <img
+          src="./Image 1.jpeg"
+          alt="Us">
+
+      </div>
+    </div>
+
+    <!-- Music -->
+  <audio id="music" loop controls>
+  <source src="./music.mp3" type="audio/mpeg">
+  </audio>
+
+  </div>
+
+  <script>
+  function openLetter(){
+
+    document.getElementById("opening-screen")
+      .style.display = "none";
+
+    document.getElementById("main-content")
+      .classList.remove("hidden");
+
+    // Try autoplay after user interaction
+    const music =
+      document.getElementById("music");
+
+    if(music){
+      music.play().catch(() => {
+        console.log("Autoplay blocked");
+      });
+    }
+  }
+
+  // Countdown
+  const countdown =
+    document.getElementById("countdown");
+
+  const anniversaryDate =
+    new Date("May 26, 2026 00:00:00");
+
+  function updateCountdown(){
+
+    const now = new Date();
+
+    const diff =
+      anniversaryDate - now;
+
+    if(diff <= 0){
+
+      countdown.innerHTML =
+        "Happy Anniversary Sayang ❤️";
+
+      return;
+    }
+
+    const days = Math.floor(
+      diff / (1000 * 60 * 60 * 24)
+    );
+
+    const hours = Math.floor(
+      (diff % (1000 * 60 * 60 * 24))
+      / (1000 * 60 * 60)
+    );
+
+    const minutes = Math.floor(
+      (diff % (1000 * 60 * 60))
+      / (1000 * 60)
+    );
+
+    const seconds = Math.floor(
+      (diff % (1000 * 60))
+      / 1000
+    );
+
+    countdown.innerHTML =
+      `${days}d ${hours}h ${minutes}m ${seconds}s left ❤️`;
+  }
+
+  updateCountdown();
+
+  setInterval(updateCountdown, 1000);
+
+  // Random floating hearts
+  function createHeart(){
+
+    const heart =
+      document.createElement("div");
+
+    heart.classList.add("heart");
+
+    // Different heart emojis
+    const hearts = [
+      "❤️",
+      "💖",
+      "💕",
+      "💗"
+    ];
+
+    heart.innerHTML =
+      hearts[
+        Math.floor(Math.random() * hearts.length)
+      ];
+
+    // Random X position
+    heart.style.left =
+      Math.random() * 100 + "vw";
+
+    // Random size
+    const size =
+      Math.random() * 25 + 15;
+
+    heart.style.fontSize =
+      size + "px";
+
+    // Random falling speed
+    const duration =
+      Math.random() * 5 + 5;
+
+    heart.style.animationDuration =
+      duration + "s";
+
+    // Random opacity
+    heart.style.opacity =
+      Math.random() * 0.5 + 0.3;
+
+    document
+      .querySelector(".hearts")
+      .appendChild(heart);
+
+    // Remove heart after animation
+    setTimeout(() => {
+      heart.remove();
+    }, duration * 1000);
+  }
+
+  // Spawn hearts continuously
+  setInterval(createHeart, 300);
+  </script>
+
+</body>
+</html>
